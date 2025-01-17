@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "password-validator": "^5.2.1",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.7",
     "react": "^18.3.1",

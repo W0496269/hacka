@@ -1,9 +1,11 @@
-const express = require('express');
-const path = require('path');
-const session = require('express-session');
-const cors = require('cors');
-const { PrismaClient } = require('@prisma/client');
-const bcrypt = require('bcrypt');
+import express from 'express';
+import path from 'path';
+import session from 'express-session';
+import cors from 'cors';
+import { PrismaClient } from '@prisma/client';
+import usersRoute from './routes/users.js';
+import formsRoute from './routes/forms.js';
+import bcrypt from 'bcrypt';
 
 const prisma = new PrismaClient();
 const app = express();
@@ -21,7 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve static images from the "images" folder
-app.use('/images', express.static(path.join(__dirname, 'public/images')));
+//app.use('/images', express.static(path.join(__dirname, 'public/images')));
 // Express session setup
 app.use(session({
     secret: 'your-secret-key',
@@ -35,12 +37,12 @@ app.use(session({
 }));
 
 // Import routes for user authentication and products
-const usersRoute = require('./routes/users');
-const productsRoute = require('./routes/products');
+// const usersRoute = require('./routes/users');
+// const formsRoute = require('./routes/forms');
 
 // Use the routes
 app.use('/users', usersRoute);
-app.use('/products', productsRoute);
+app.use('/forms', formsRoute);
 
 // Start the server
 app.listen(PORT, () => {

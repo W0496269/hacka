@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+// Inspection forms based on the new structure
 const inspectionForms = {
   Classroom: [
     { id: 1, question: "Housekeeping: Cleanliness, waste disposal, surface dust levels", field: "housekeeping" },
@@ -69,69 +70,49 @@ const inspectionForms = {
 const Form = () => {
   const [formType, setFormType] = useState("Classroom");
   const [formData, setFormData] = useState({});
-  const [errors, setErrors] = useState({});
-  const [isFormValid, setIsFormValid] = useState(false);
   const navigate = useNavigate();
 
   const handleTypeChange = (e) => {
     setFormType(e.target.value);
-    setFormData({});
-    setErrors({});
-    setIsFormValid(false);
+    setFormData({}); // Reset form data when type changes
   };
 
   const handleChange = (e, field) => {
     setFormData({ ...formData, [field]: e.target.value });
-    setErrors({ ...errors, [field]: false });
   };
 
-  const validateForm = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Check if any fields with "No" require additional information
     let isValid = true;
-    let validationErrors = {};
-
     inspectionForms[formType].forEach((field) => {
-      if (!formData[field.field]) {
-        isValid = false;
-        validationErrors[field.field] = "*This field is required";
-      }
-
       if (formData[field.field] === "No") {
         if (
           !formData[`${field.field}Deficiency`] ||
           !formData[`${field.field}Action`] ||
           !formData[`${field.field}Person`] ||
-          !formData[`${field.field}Date`]
+          !formData[`${field.field}Date`] // Ensure date field is filled
         ) {
           isValid = false;
-          validationErrors[field.field] = "*Please fill out all required fields for 'No' answer";
+          alert(`Please fill out the required fields for: ${field.question}`);
         }
       }
     });
 
-    setErrors(validationErrors);
-    setIsFormValid(isValid);
-    return isValid;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!validateForm()) return;
+    if (!isValid) return;
 
     axios
       .post("/api/inspections", { type: formType, data: formData })
       .then(() => {
         alert("Inspection created successfully!");
-        navigate("/dashboard");
+        navigate("/dashboard"); // Redirect to the dashboard after submission
       })
       .catch((error) => {
         console.error("Error creating inspection:", error);
         alert("Failed to create inspection.");
       });
   };
-
-  useEffect(() => {
-    validateForm();
-  }, [formData]);
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
@@ -161,10 +142,7 @@ const Form = () => {
             <div key={field.id} className="mb-4">
               <label className="block text-gray-700 font-medium mb-2">{field.question}</label>
               <div className="btn-group btn-group-toggle" data-toggle="buttons">
-                <label
-                  className={`btn ${formData[field.field] === "Yes" ? "btn-success active" : "btn-outline-secondary"}` }
-                  role="button"
-                >
+                <label className={`btn ${formData[field.field] === "Yes" ? "btn-success active" : "btn-outline-secondary"}`} role="button">
                   <input
                     type="radio"
                     name={field.field}
@@ -176,10 +154,7 @@ const Form = () => {
                   />
                   YES
                 </label>
-                <label
-                  className={`btn ${formData[field.field] === "No" ? "btn-danger active" : "btn-outline-secondary"}` }
-                  role="button"
-                >
+                <label className={`btn ${formData[field.field] === "No" ? "btn-danger active" : "btn-outline-secondary"}`} role="button">
                   <input
                     type="radio"
                     name={field.field}
@@ -191,10 +166,7 @@ const Form = () => {
                   />
                   NO
                 </label>
-                <label
-                  className={`btn ${formData[field.field] === "N/A" ? "btn-secondary active" : "btn-outline-secondary"}` }
-                  role="button"
-                >
+                <label className={`btn ${formData[field.field] === "N/A" ? "btn-secondary active" : "btn-outline-secondary"}`} role="button">
                   <input
                     type="radio"
                     name={field.field}
@@ -207,11 +179,6 @@ const Form = () => {
                   N/A
                 </label>
               </div>
-
-              {/* Error message for missing selection */}
-              {errors[field.field] && (
-                <div className="text-red-600 text-sm font-bold mt-2">{errors[field.field]}</div>
-              )}
 
               {/* If "No" is selected, make these fields required */}
               {formData[field.field] === "No" && (
@@ -252,11 +219,9 @@ const Form = () => {
             </div>
           ))}
 
-          {/* Submit Button */}
           <button
             type="submit"
-            className={`px-6 py-2 rounded shadow ${isFormValid ? "bg-blue-600 hover:bg-blue-700" : "bg-gray-400 cursor-not-allowed"} text-white`}
-            disabled={!isFormValid}
+            className="bg-blue-500 text-white px-6 py-2 rounded shadow hover:bg-blue-600"
           >
             Submit
           </button>
