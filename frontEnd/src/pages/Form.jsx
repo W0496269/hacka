@@ -92,7 +92,7 @@ const Form = () => {
     inspectionForms[formType].forEach((field) => {
       if (!formData[field.field]) {
         isValid = false;
-        validationErrors[field.field] = "*This field is required"; // Error message
+        validationErrors[field.field] = "*This field is required";
       }
 
       if (formData[field.field] === "No") {
@@ -103,7 +103,7 @@ const Form = () => {
           !formData[`${field.field}Date`]
         ) {
           isValid = false;
-          validationErrors[field.field] = "*Please fill out all required fields for 'No' answer"; // Specific error for 'No'
+          validationErrors[field.field] = "*Please fill out all required fields for 'No' answer";
         }
       }
     });
@@ -208,7 +208,7 @@ const Form = () => {
                 </label>
               </div>
 
-              {/* Display error message in red */}
+              {/* Error message for missing selection */}
               {errors[field.field] && (
                 <div className="text-red-600 text-sm font-bold mt-2">{errors[field.field]}</div>
               )}
