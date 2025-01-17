@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AJBen2005s/Inet-sprint3.git"
+    "url": "git+https://github.com/AJBen2005s/hacka.git"
   },
   "keywords": [
     "server",
@@ -20,7 +20,7 @@
   "author": "AJ Benjamin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AJBen2005s/Inet-sprint3/issues"
+    "url": "https://github.com/AJBen2005s/hacka/issues"
   },
-  "homepage": "https://github.com/AJBen2005s/Inet-sprint3#readme"
+  "homepage": "https://github.com/AJBen2005s/hacka#readme"
 }
