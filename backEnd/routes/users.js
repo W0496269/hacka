@@ -26,9 +26,9 @@ schema
 
 // Signup route
 router.post('/signup', async (req, res) => {
-  const { email, password, first_name, last_name } = req.body;
+  const { email, password, first_name, last_name, w_number, role } = req.body;
 
-  if (!email || !password || !first_name || !last_name) {
+  if (!email || !password || !first_name || !last_name || !w_number || !role) {
     return res.status(400).json({ error: 'All fields are required' });
   }
 
@@ -39,12 +39,14 @@ router.post('/signup', async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const newUser = await prisma.customer.create({
+    const newUser = await prisma.employee.create({
       data: {
         email,
         password: hashedPassword,
         first_name,
         last_name,
+        role,
+        w_number,  // Ensure this is passed
       },
     });
 
@@ -68,7 +70,7 @@ router.post('/login', async (req, res) => {
   }
 
   try {
-    const user = await prisma.customer.findUnique({
+    const user = await prisma.employee.findUnique({
       where: { email: email },
     });
 
@@ -82,10 +84,11 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.user = {
-      customer_id: user.customer_id,
+      user_id: user.user_id,
       email: user.email,
       first_name: user.first_name,
-      last_name: user.last_name
+      last_name: user.last_name,
+      role: user.role,
     };
 
     res.status(200).json({ message: 'Login successful', user: { email: user.email } });
@@ -94,7 +97,6 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ error: 'An error occurred while trying to log in' });
   }
 });
-
 
 // Logout route
 router.post('/logout', (req, res) => {
@@ -109,8 +111,8 @@ router.post('/logout', (req, res) => {
 // Get user session route
 router.get('/getSession', (req, res) => {
   if (req.session && req.session.user) {
-    const { user_id, email, first_name, last_name } = req.session.user;
-    return res.status(200).json({ user_id, email, first_name, last_name });
+    const { user_id, email, first_name, last_name, role } = req.session.user;
+    return res.status(200).json({ user_id, email, first_name, last_name, role });
   }
   res.status(401).json({ message: 'No active session.' });
 });
