@@ -23,3 +23,17 @@ model Employee {
   email       String @unique
   password    String 
 }
+
+model Form {
+  id     Int    @id @default(autoincrement())
+  type   String
+  room   String
+  data   Json
+  createdAt DateTime @default(now())
+}
+
+model Room {
+  id     Int    @id @default(autoincrement())
+  name   String
+  status String // e.g., 'completed' or 'not completed'
+}
