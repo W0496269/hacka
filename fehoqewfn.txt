@@ -1,0 +1,116 @@
+Items Yes No N/A Document:  1. Deficiency                       Date Action Completed
+                            2. Action to rectify deficiency
+                            3. Person Responsible 
+                            4. Target Completion Date 
+
+The comprehensive inspection checklists across various work environments (classrooms, offices, shops, maintenance rooms, laboratories, and culinary areas) are broken into categories related to safety, organization, and cleanliness. Below is an organized summary of the key inspection categories and items from each checklist:
+
+A: Classroom 5S+S Inspection Checklist
+    1. Housekeeping
+        Cleanliness of the workplace, proper waste disposal, and low surface dust levels.
+    2. Floors, Aisles & Exits
+        Clear and unobstructed floors, aisles, and exits.
+    3. Classroom Furniture
+        Good condition of furniture and equipment, no safety hazards.
+    4. Lighting
+        Functioning lights, need for bulb or tube replacement.
+    5. Electrical Safety
+        Proper condition of cords, plugs, outlets; extension cords usage.
+    6. Fire Safety
+        Ceiling tiles installed, unobstructed sprinkler heads, proper storage distance from sprinklers.
+    7. Security/Personal Safety
+        Functional lock, proper window coverings.
+    8. First Aid Cabinet
+        Accessible and well-stocked first aid supplies.
+
+B: Office 5S+S Inspection Checklist
+    1. Housekeeping
+        Cleanliness, proper disposal of garbage, low dust levels, and recycling.
+    2. Office Furniture and Equipment
+        Good condition of furniture and equipment, no safety hazards, clean surfaces.
+    3. Floors, Aisles & Exits
+        Clean, clear, and tidy floors, aisles, and exits.
+    4. Lighting
+        Functional lights with no need for replacement bulbs.
+    5. Electrical Safety
+        Proper condition of cords, plugs, outlets; extension cords usage; portable electric heater safety.
+    6. Security/Personal Safety
+        Valuables handling, evacuation, lockdown, and security procedures.
+    7. Fire Safety
+        Unobstructed sprinkler heads, proper storage distance from sprinklers, extinguisher inspections.
+    8. First Aid Cabinet
+        Accessible and well-stocked first aid kit.
+
+C: Shop 5S+S Inspection Checklist
+    1. Aisles and Passages
+        Clear aisles, well-marked, visible signage at intersections.
+    2. Floor Surface
+        Clean floors with no slipping or stumbling risks.
+    3. Walls/Partitions
+        Clean walls and used for visual controls.
+    4. Windows
+        Clean and unobstructed windows.
+    5. Columns and Ceiling
+        Clean columns and ceilings with proper identification.
+    6. Lighting
+        Well-located light fixtures, adequate lighting for tasks.
+    7. Electrical Apparatus
+        Sufficient work area around electrical panels, clean and accessible panels, properly maintained wires.
+
+D: Maintenance Room 5S+S Inspection Checklist
+    1. General Safety
+        Cleanliness, waste disposal, adequate supplies, proper Personal Protective Equipment (PPE), chemical safety.
+    2. Floors, Aisles & Exits
+        Clear and unobstructed pathways, proper storage.
+    3. Lighting
+        Proper lighting and need for bulb replacements.
+    4. Shelving
+        Secure shelving, proper storage capacity, safety hazards.
+    5. Electrical Safety
+        Safe cords, plugs, sockets, and use of extension cords.
+
+E: Laboratory 5S+S Inspection Checklist
+    1. Signage
+        Visible emergency contact, safety, and operating hazard signs.
+    2. General Lab Safety
+        Well-stocked first aid kits, tidy work areas, proper labeling and storage of chemicals.
+    3. Emergency Evacuation
+        Unobstructed exits, awareness of evacuation procedures.
+    4. Fire Extinguishers
+        Proper type and inspection status of extinguishers.
+    5. Employee Training
+        Adequate safety training and availability of safety manuals.
+    6. Personal Protective Equipment
+        Proper use of PPE by employees and students.
+    7. Chemical Storage and Handling
+        Updated safety data sheets, correct storage and labeling of chemicals.
+    8. Safety Showers and Eye Wash Stations
+        Operational and regularly inspected safety showers and eye wash stations.
+    9. Fume Hoods
+        Inspected, uncluttered, and properly functioning.
+    10. Flammables Storage Cabinets
+        Proper condition and storage of flammable materials.
+    11. Chemical Waste
+        Proper labeling, secure containers, waste minimization, and disposal procedures.
+    12. Sharps and Biological Waste
+        Proper disposal containers and procedures for sharps and biological waste.
+
+F: Culinary 5S+S Inspection Checklist
+    1. General Safety
+        Cleanliness, waste disposal, appropriate PPE, proper chemical handling.
+    2. Work Environment
+        No infestations, clean dumpster areas.
+    3. Floors, Aisles & Exits
+        Clear, clean aisles and proper equipment storage.
+    4. Lighting
+        Proper lighting for tasks.
+    5. Shelving
+        Secure shelves, proper storage, safe heights, and available ladders.
+    6. Stacked Material
+        Stable and orderly material storage.
+    7. Electrical Safety
+        Properly maintained electrical equipment, no overloaded outlets.
+    8. Machinery
+        Safety guards on equipment, secure mounting, regular maintenance.
+    9. Gas/Fire Safety
+        Training for gas leak emergencies, proper fire extinguisher inspections, and fire safety practices.
