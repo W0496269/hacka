@@ -6,6 +6,7 @@ const Dashboard = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // Replace '/api/inspections' with your actual API URL if needed
     axios
       .get('/api/inspections')
       .then((response) => {
@@ -32,22 +33,30 @@ const Dashboard = () => {
   return (
     <div>
       {Array.isArray(inspections) && inspections.length > 0 ? (
-        <table>
+        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Location</th>
-              <th>Type</th>
-              <th>Performed By</th>
+              <th style={{ border: '1px solid black', padding: '8px' }}>Date</th>
+              <th style={{ border: '1px solid black', padding: '8px' }}>Location</th>
+              <th style={{ border: '1px solid black', padding: '8px' }}>Type</th>
+              <th style={{ border: '1px solid black', padding: '8px' }}>Performed By</th>
             </tr>
           </thead>
           <tbody>
             {inspections.map((inspection) => (
               <tr key={inspection.id}>
-                <td>{new Date(inspection.date).toLocaleDateString()}</td>
-                <td>{inspection.location}</td>
-                <td>{inspection.type}</td>
-                <td>{inspection.performedBy}</td>
+                <td style={{ border: '1px solid black', padding: '8px' }}>
+                  {new Date(inspection.date).toLocaleDateString()}
+                </td>
+                <td style={{ border: '1px solid black', padding: '8px' }}>
+                  {inspection.location}
+                </td>
+                <td style={{ border: '1px solid black', padding: '8px' }}>
+                  {inspection.type}
+                </td>
+                <td style={{ border: '1px solid black', padding: '8px' }}>
+                  {inspection.performedBy}
+                </td>
               </tr>
             ))}
           </tbody>
