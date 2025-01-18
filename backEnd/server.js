@@ -4,7 +4,7 @@ import session from 'express-session';
 import cors from 'cors';
 import { PrismaClient } from '@prisma/client';
 import usersRoute from './routes/users.js';
-import formsRoute from './routes/forms.js';
+import formRoute from './routes/form.js';
 import bcrypt from 'bcrypt';
 
 const prisma = new PrismaClient();
@@ -42,7 +42,7 @@ app.use(session({
 
 // Use the routes
 app.use('/users', usersRoute);
-app.use('/forms', formsRoute);
+app.use('/form', formRoute);
 
 // Start the server
 app.listen(PORT, () => {
